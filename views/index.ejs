@@ -9,24 +9,26 @@
       <form class="ui form">
         <div class="field">
           <label>Email</label>
-          <input type="email" name="email" placeholder="Email">
+          <input id="email" type="email" name="email" placeholder="Email">
         </div>
         <div class="field">
           <label>Username</label>
-          <input type="text" name="username" placeholder="Username">
+          <input id="username" type="text" name="username" placeholder="Username">
         </div>
         <div class="field">
           <label>Password</label>
-          <input type="password" name="password" placeholder="Password">
+          <input id="password" type="password" name="password" placeholder="Password">
         </div>
         <div class="field">
           <label>Confirm Password</label>
-          <input type="password" name="confirm-password" placeholder="Confirm Password">
+          <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password">
         </div>
-        <button class="ui button" type="submit">Submit</button>
+        <div class="ui primary submit button" id="submitButton">Submit</div>
+        <div class="ui error message"></div>
       </form>
     </div>
 
+    <script src="/javascript/index.js"></script>
   </body>
 
 </html>

@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-    color: blue;
+    color: darkblue;
 }
 
 .center {
@@ -12,4 +12,8 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30%;
+    color: black;
+    background-color: #d3d3d3;
+    padding: 2rem;
+    border-radius: 10px;
 }
