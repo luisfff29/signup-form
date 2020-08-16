@@ -1,0 +1,25 @@
+{
+  "name": "full-application",
+  "version": "1.0.0",
+  "description": "Create a full-stack application in Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisfff29/full-application-express.git"
+  },
+  "author": "Luis Fuentes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisfff29/full-application-express/issues"
+  },
+  "homepage": "https://github.com/luisfff29/full-application-express#readme",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1"
+  }
+}
