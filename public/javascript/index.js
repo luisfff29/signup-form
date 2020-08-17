@@ -1,6 +1,6 @@
 $("#submitButton").click(function (e) {
-    userObject = {};
     if ($(".ui.form").form("is valid")) {
+        userObject = {};
         e.preventDefault();
         if ($(".ui.form").form("is valid")) {
             const arr = $("form").serializeArray();
@@ -10,12 +10,11 @@ $("#submitButton").click(function (e) {
                 }
             });
         }
-        fetch(`http://localhost:${location.port}/api/user`, {
+        console.log(userObject);
+        fetch(`http://localhost:${location.port}/api/user/`, {
             method: "post",
             body: JSON.stringify(userObject),
-        })
-            .then((res) => res.json())
-            .then((data) => console.log(data));
+        }).then((res) => console.log(res));
     }
 });
 
