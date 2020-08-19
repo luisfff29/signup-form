@@ -27,7 +27,7 @@ $("form input").keydown(function (e) {
 });
 
 $("#submitButton").click(function (e) {
-    if ($(".ui.form").form("is valid")) {
+    if ($(".ui.form").form("validate form")) {
         userObject = {};
         const arr = $("form").serializeArray();
         arr.forEach((input) => {
@@ -62,7 +62,6 @@ $("#submitButton").click(function (e) {
                 }
             });
     }
-    e.preventDefault();
 });
 
 $(".ui.form").form({

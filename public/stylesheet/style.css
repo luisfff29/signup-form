@@ -17,6 +17,7 @@ h1 {
     color: white;
     padding: 2rem;
     border-radius: 10px;
+    overflow: scroll;
 }
 
 #users .content .header {
