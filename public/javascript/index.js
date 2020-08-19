@@ -36,7 +36,9 @@ $("#submitButton").click(function (e) {
             }
         });
 
-        fetch(`http://localhost:${location.port}/api/user/`, {
+        // For local purposes
+        // fetch(`http://localhost:${location.port}/api/user/`, {
+        fetch(`https://signup-form-app.herokuapp.com/api/user`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
