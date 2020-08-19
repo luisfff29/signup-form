@@ -17,9 +17,29 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/user", (req, res) => {
-    req.body.message = "Good job";
-    console.log(req.body);
-    res.status(201).send({ message: "Good job!" });
+    var userCreated = false;
+    for (let i = 0; i < usersArray.length; i++) {
+        if (usersArray[i].username === req.body.username) {
+            console.error("Error, username already exists");
+            userCreated = true;
+            res.status(409).send({
+                message: `The username "${req.body.username}" already exists. Please use a different username`,
+                status: 409,
+            });
+        }
+    }
+
+    if (!userCreated) {
+        usersArray.push(req.body);
+        console.log(usersArray);
+        //Random unique ID
+        req.body.id = Math.random().toString(36).substr(2, 9);
+        res.status(201).send({
+            message: `Thank you for your registration, ${req.body.username}!`,
+            status: 201,
+            user: req.body,
+        });
+    }
 });
 
 app.listen(port, () => {

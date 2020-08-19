@@ -8,8 +8,6 @@ $("#submitButton").click(function (e) {
                 userObject[input.name] = input.value;
             }
         });
-        console.log(userObject);
-        console.log(location.port);
 
         fetch(`http://localhost:${location.port}/api/user/`, {
             method: "POST",
@@ -20,7 +18,12 @@ $("#submitButton").click(function (e) {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log("Message:", data.message);
+                console.log(data.message);
+                if (data.status === 201) {
+                    $("#message").text(data.message).css({ color: "green" });
+                } else {
+                    $("#message").text(data.message).css({ color: "red" });
+                }
             });
     }
 });

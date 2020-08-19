@@ -3,10 +3,10 @@
 
   <%- include("./include/header") %>
 
-  <body>
-    <div class="center">
+  <body class="ui grid">
+    <div class="center four wide computer seven wide tablet fourteen wide mobile column">
       <h1>Sign up Form</h1>
-      <h2><%= typeof result != 'undefined' ? result : '' %></h2>
+      <h4 id="message"></h4>
       <form class="ui form">
         <div class="field">
           <label>Email</label>

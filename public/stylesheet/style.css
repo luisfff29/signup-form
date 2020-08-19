@@ -3,17 +3,18 @@ body {
 }
 
 h1 {
-    color: darkblue;
+    color: #7289da;
 }
 
 .center {
     position: absolute;
     top: 50%;
     left: 50%;
+    height: fit-content;
     transform: translate(-50%, -50%);
     width: 30%;
     color: black;
-    background-color: #d3d3d3;
+    background-color: #daebe5;
     padding: 2rem;
     border-radius: 10px;
 }
