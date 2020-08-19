@@ -30,10 +30,10 @@ app.post("/api/user", (req, res) => {
     }
 
     if (!userCreated) {
+        req.body.id = Date.now();
         usersArray.push(req.body);
         console.log(usersArray);
-        //Random unique ID
-        req.body.id = Math.random().toString(36).substr(2, 9);
+        //unique ID
         res.status(201).send({
             message: `Thank you for your registration, ${req.body.username}!`,
             status: 201,

@@ -4,7 +4,7 @@ $("#submitButton").click(function (e) {
         userObject = {};
         const arr = $("form").serializeArray();
         arr.forEach((input) => {
-            if (input.name != "confirmPassword") {
+            if (input.name != "password" && input.name != "confirmPassword") {
                 userObject[input.name] = input.value;
             }
         });
@@ -21,8 +21,12 @@ $("#submitButton").click(function (e) {
                 console.log(data.message);
                 if (data.status === 201) {
                     $("#message").text(data.message).css({ color: "green" });
+                    $("#message2").text(
+                        `Great! Your ID number is ${data.user.id}`
+                    );
                 } else {
                     $("#message").text(data.message).css({ color: "red" });
+                    $("#message2").text("");
                 }
             });
     }
