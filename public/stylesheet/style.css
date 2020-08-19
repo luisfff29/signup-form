@@ -1,21 +1,31 @@
 body {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
 }
 
 h1 {
     color: #7289da;
 }
 
-.center {
-    top: 50%;
-    left: 50%;
-    height: fit-content;
-    transform: translate(-50%, -50%);
-    color: black;
-}
-
 #form {
     background-color: #daebe5;
     padding: 2rem;
     border-radius: 10px;
+}
+
+#users {
+    background-color: rgb(24, 26, 27);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+#users .content .header {
+    font-weight: bolder;
+}
+
+#users .title {
+    color: white;
 }

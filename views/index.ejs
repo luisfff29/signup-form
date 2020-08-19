@@ -3,7 +3,7 @@
 
   <%- include("./include/header") %>
 
-  <body class="center">
+  <body>
     <div class="ui stackable two column vertically divided grid container cards">
       <div class="row">
         <div class="column">
@@ -34,18 +34,25 @@
           </div>
         </div>
         <div class="column">
-          <div class="card">
+          <div class="card" id="users">
             <div class="content">
-              <div class="header">Users</div>
-              <div class="ui accordion">
+              <div class="header">USERS:</div>
+              <div class="ui accordion" id="userList">
+                <% for( let i = 0; i < users.length; i++ ) { %>
                 <div class="title">
                   <i class="dropdown icon"></i>
-                  What is a dog?
+                  <%= users[i].username %>
                 </div>
                 <div class="content">
-                  <p class="transition hidden">A dog is a type of domesticated animal. Known for its loyalty and
-                    faithfulness</p>
+                  <pre class="transition hidden">
+    {
+        "username": "<%= users[i].username %>",
+        "email": "<%= users[i].email %>",
+        "id": "<%= users[i].id %>"
+    }
+                  </pre>
                 </div>
+                <% } %>
               </div>
             </div>
           </div>

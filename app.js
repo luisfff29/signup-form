@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("index", { users: usersArray });
 });
 
 app.post("/api/user", (req, res) => {

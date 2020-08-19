@@ -1,3 +1,19 @@
+function newUser(username, info) {
+    return `<div class="title">
+        <i class="dropdown icon"></i>
+        ${username}
+    </div>
+    <div class="content">
+        <pre class="transition hidden">
+    {
+        "username": "${info.username}",
+        "email": "${info.email}",
+        "id": "${info.id}"
+    }
+        </pre>
+    </div>`;
+}
+
 $("#submitButton").click(function (e) {
     if ($(".ui.form").form("is valid")) {
         e.preventDefault();
@@ -23,6 +39,9 @@ $("#submitButton").click(function (e) {
                     $("#message").text(data.message).css({ color: "green" });
                     $("#message2").text(
                         `Great! Your ID number is ${data.user.id}`
+                    );
+                    $("#userList").append(
+                        newUser(data.user.username, data.user)
                     );
                 } else {
                     $("#message").text(data.message).css({ color: "red" });
