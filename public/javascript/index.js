@@ -1,20 +1,27 @@
 $("#submitButton").click(function (e) {
     if ($(".ui.form").form("is valid")) {
-        userObject = {};
         e.preventDefault();
-        if ($(".ui.form").form("is valid")) {
-            const arr = $("form").serializeArray();
-            arr.forEach((input) => {
-                if (input.name != "confirmPassword") {
-                    userObject[input.name] = input.value;
-                }
-            });
-        }
+        userObject = {};
+        const arr = $("form").serializeArray();
+        arr.forEach((input) => {
+            if (input.name != "confirmPassword") {
+                userObject[input.name] = input.value;
+            }
+        });
         console.log(userObject);
+        console.log(location.port);
+
         fetch(`http://localhost:${location.port}/api/user/`, {
-            method: "post",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify(userObject),
-        }).then((res) => console.log(res));
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("Message:", data.message);
+            });
     }
 });
 
