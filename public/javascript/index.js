@@ -57,3 +57,5 @@ $(".ui.form").form({
         },
     },
 });
+
+$(".ui.accordion").accordion();

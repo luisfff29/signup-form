@@ -7,13 +7,14 @@ h1 {
 }
 
 .center {
-    position: absolute;
     top: 50%;
     left: 50%;
     height: fit-content;
     transform: translate(-50%, -50%);
-    width: 30%;
     color: black;
+}
+
+#form {
     background-color: #daebe5;
     padding: 2rem;
     border-radius: 10px;
