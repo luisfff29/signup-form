@@ -20,6 +20,19 @@
                 <input id="username" type="text" name="username" placeholder="Username">
               </div>
               <div class="field">
+                <label>Gender</label>
+                <div class="ui selection dropdown">
+                  <input type="hidden" name="gender">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Male</div>
+                  <div class="menu">
+                    <div class="item" data-value="Male">Male</div>
+                    <div class="item" data-value="Female">Female</div>
+                    <div class="item" data-value="undefined">Not specified</div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
                 <label>Password</label>
                 <input id="password" type="password" name="password" placeholder="Password">
               </div>
@@ -48,6 +61,7 @@
     {
         "username": "<%= users[i].username %>",
         "email": "<%= users[i].email %>",
+        "gender": <%= users[i].gender !== "undefined" ? JSON.stringify(users[i].gender) : users[i].gender %>,
         "id": "<%= users[i].id %>"
     }
                   </pre>

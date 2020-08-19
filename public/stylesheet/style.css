@@ -1,8 +1,5 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
+.container {
+    padding-top: 1rem !important;
 }
 
 h1 {

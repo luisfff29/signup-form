@@ -8,7 +8,12 @@ function newUser(username, info) {
     {
         "username": "${info.username}",
         "email": "${info.email}",
-        "id": "${info.id}"
+        "gender": ${
+            info.gender !== "undefined"
+                ? JSON.stringify(info.gender)
+                : info.gender
+        },
+        "id": ${info.id}
     }
         </pre>
     </div>`;
@@ -78,3 +83,5 @@ $(".ui.form").form({
 });
 
 $(".ui.accordion").accordion();
+
+$(".selection.dropdown").dropdown();
