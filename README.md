@@ -38,9 +38,15 @@ Server code and Client code written in the same project.
         -   Set response status code to 409
         -   Send error message describing the problem
 
-## Run
+## Run local project
 
-To start the project you can type on the terminal:
+To start the project first install the dependencies:
+
+```bash
+npm install
+```
+
+then you can start the application with:
 
 ```bash
 node app
